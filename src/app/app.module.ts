@@ -3,10 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LoginComponent } from './domain/views/login/login.component';
+import { MaxlengthPipe } from './domain/pipes/maxlength.pipe';
+import { RegisterComponent } from './domain/views/register/register.component';
+import { NotFoundPage } from "./domain/views/notFound/notFound.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    MaxlengthPipe,
+    RegisterComponent,
+    NotFoundPage
   ],
   imports: [
     BrowserModule,

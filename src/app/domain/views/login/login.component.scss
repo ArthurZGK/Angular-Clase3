@@ -1,0 +1,32 @@
+.loginCtn {
+    display: flex;
+    flex-flow: column;
+    min-width: 300px;
+    width: 50%;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 2px 5px #bbb;
+  
+    label {
+      color: #bebebe
+    }
+  }
+  
+  label {
+    margin: 12px 0;
+    color: #45d643
+  }
+  
+  input {
+    height: 42px;
+    border: 1px solid #dadada;
+    font-size: 16px;
+    padding: 0 12px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
