@@ -7,6 +7,7 @@ import { LoginComponent } from './domain/views/login/login.component';
 import { MaxlengthPipe } from './domain/pipes/maxlength.pipe';
 import { RegisterComponent } from './domain/views/register/register.component';
 import { NotFoundPage } from "./domain/views/notFound/notFound.component";
+import { ToFormatPhonePipe } from './domain/pipes/to-format-phone.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NotFoundPage } from "./domain/views/notFound/notFound.component";
     LoginComponent,
     MaxlengthPipe,
     RegisterComponent,
-    NotFoundPage
+    NotFoundPage,
+    ToFormatPhonePipe
   ],
   imports: [
     BrowserModule,
