@@ -2,15 +2,33 @@
 <h1>{{rompeTexto | slice:0:3}}</h1>
 <h1>{{hoy | date:'dd/MM/yyyy'}}</h1> -->
 <!-- <h1>{{rompeTexto | verMas}}</h1> -->
-<h1>{{miNumero | toFormatPhone }}</h1>
+<!-- <h1>{{miNumero | toFormatPhone }}</h1> -->
 <div class="container">
-    <div class="loginCtn">
-      <h2>Inicia sesión</h2>
-      <label>Correo: </label>
-      <input placeholder="email@mail.com" type="email" required/>
-      <label>Contraseña </label>
-      <input placeholder="******" type="password" required/>
-    </div>
-    <label>¿Olvidaste tu contraseña?</label>
+  <div class="loginCtn">
+    <h2>Inicia sesión</h2>
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Correo electrónico</mat-label>
+        <input matInput  formControlName="email" autocomplete="off" required>
+        <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Constraseña</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" required formControlName="password">
+        <!-- <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button> -->
+      </mat-form-field>
+      <!-- <input placeholder="email@mail.com" type="email" required formControlName="email" autocomplete="none" /> -->
+      <!-- <input placeholder="******" type="password" required formControlName="password" /> -->
+
+      <button mat-flat-button  type="submit"> Ingresar</button>
+    </form>
   </div>
+  <label>¿Olvidaste tu contraseña?</label>
+  <div *ngIf="showuser">
+    <label>El estado del email:{{emailStatus}}</label>
+
+  </div>
+</div>
   

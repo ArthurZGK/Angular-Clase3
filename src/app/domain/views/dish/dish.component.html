@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="content">
+	<form [formGroup]="dishForm" (submit)="onSubmit()">
+		<mat-form-field appearance="outline">
+			<mat-label>Nombre del plato</mat-label>
+			<input matInput type="text"
+				required formControlName="dishname" autocomplete="off"
+			/>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Descripción</mat-label>
+			<input matInput type="text"
+				required formControlName="description" autocomplete="off"
+			/>
+		</mat-form-field>
+        <mat-form-field appearance="outline">
+			<mat-label>Foto</mat-label>
+			<input matInput type="text"
+				required formControlName="image" autocomplete="off"
+			/>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Precio</mat-label>
+			<input matInput type="number"
+				required formControlName="price" autocomplete="off"
+			/>
+		</mat-form-field>
+		<mat-form-field appearance="outline">
+			<mat-label>Unidades</mat-label>
+			<input matInput type="number"
+				required formControlName="stock" autocomplete="off"
+			/>
+		</mat-form-field>
+		<div class="">
+			<div>
+				<label>Agregar un ingrediente</label>
+				<button mat-flat-button color="primary" (click)="addIngredient()" type="button">Agregar</button>
+			</div>
+			<div *ngFor="let ingredient of ingredients; let i = index;" class="row">
+				<mat-form-field appearance="outline">
+					<mat-label>ingrediente</mat-label>
+					<input matInput type="text"
+						required [(ngModel)]="ingredients[i]" 
+						[ngModelOptions]="{standalone: true}"
+						autocomplete="off"
+					/>
+				</mat-form-field>
+			</div>
+
+		</div>
+		<button mat-flat-button type="submit">Guardar</button>
+	</form>
+</div>
+

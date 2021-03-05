@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularg21-2021pe": {
+      "hosting": {
+        "Clase3b": [
+          "angularg21-2021pe"
+        ]
+      }
+    }
+  }
+}
